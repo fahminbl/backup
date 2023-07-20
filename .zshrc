@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-source ~/Documents/zsh-unique-id-1.0.0/zsh-unique-id.plugin.zsh
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -8,8 +8,25 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="gnzh"
-#ZSH_THEME="pygmalion"
+#ZSH_THEME="random"
+#ZSH_THEME="sammy"
+ZSH_THEME="fino-time"
+#ZSH_THEME="philips"
+#ZSH_THEME="skaro"
+#ZSH_THEME="jnrowe"
+#ZSH_THEME="evan"
+#ZSH_THEME="wezm+"
+#ZSH_THEME="awesomepanda"
+#ZSH_THEME="agnoster"
+#ZSH_THEME="gozilla"
+#ZSH_THEME="junkfood"
+#ZSH_THEME="fishy"
+#ZSH_THEME="takashiyoshida"
+#ZSH_THEME="dpoggi"
+#ZSH_THEME="jonathan"
+#ZSH_THEME="apple"
+#ZSH_THEME="maran"
+#ZSH_THEME="bira"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -36,13 +53,13 @@ ZSH_THEME="gnzh"
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
-DISABLE_LS_COLORS="true"
+# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
-PS1="\[\e]0;${last_cmd}\]$PS1"
+# DISABLE_AUTO_TITLE="true"
+
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -100,25 +117,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-    case "$TERM" in
-    xterm*|rxvt*)
-        function xtitle () {
-            builtin print -n -- "\e]0;$@\a"
-        }
-        ;;
-    screen)
-        function xtitle () {
-            builtin print -n -- "\ek$@\e\\"
-        }
-        ;;
-    *)
-        function xtitle () {
-        }
-esac
+export PATH="/usr/local/bin/":$PATH
 
-function precmd () {
-    xtitle "$(print -P $ZUID_ID.  $USER@$HOST: '%~' '(zsh)')"
-}
- function preexec () {
-    xtitle "Running $1"
-}
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
